@@ -6,7 +6,7 @@ namespace LeetCodeSolution
     {
         static void Main(string[] args)
         {
-            var p = new Problem5();
+            var p = new Problem7();
             p.Execute();
             Console.ReadKey();
         }
