@@ -23,16 +23,14 @@ namespace LeetCodeSolution
         public int[] TwoSum(int[] nums, int target)
         {
             var hash = new Dictionary<int, int>();
-            for (var i = 0; i < nums.Length; i++)
+            int diff, i, length;
+            for (i = 0, length = nums.Length; i < length; i++)
             {
                 var val = nums[i];
-                var diff = target - val;
+                diff = target - val;
                 if (hash.ContainsKey(diff))
                 {
-                    var tarIndex = hash[diff];
-                    var left = i < tarIndex ? i : tarIndex;
-                    var right = i >= tarIndex ? i : tarIndex;
-                    return new int[] { left, right };
+                    return new int[] { hash[diff], i };
                 }
                 hash[val] = i;
             }
